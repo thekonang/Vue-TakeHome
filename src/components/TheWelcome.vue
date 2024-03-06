@@ -38,6 +38,14 @@ img {
     <a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a> icons were
     used
     <br />
+    The static webpage was deployed using<a
+      href="https://docs.github.com/en/actions/using-workflows"
+      target="_blank"
+      rel="noopener"
+      >GitHub workflows</a
+    >
+
+    <br />
 
     More informations are available in <code>README.md</code>.
   </WelcomeItem>
