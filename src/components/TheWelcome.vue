@@ -1,83 +1,66 @@
 <script setup lang="ts">
 import WelcomeItem from './WelcomeItem.vue'
 </script>
-
+<style>
+img {
+  color: white;
+}
+</style>
 <template>
   <WelcomeItem>
-    <template #icon>
-      <DocumentationIcon />
-    </template>
+    <template #icon> <font-awesome-icon icon="file" /> </template>
     <template #heading>Documentation</template>
 
-    Vue’s
-    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
-    provides you with all information you need to get started.
+    Follow this link for the
+    <a
+      href="https://github.com/thekonang/Vue-TakeHome?tab=readme-ov-file#takehomeassignmentvuetify"
+      target="_blank"
+      rel="noopener"
+      >ReadMe Page
+    </a>
+    of this project for a detailed guide.
   </WelcomeItem>
 
   <WelcomeItem>
     <template #icon>
-      <ToolingIcon />
+      <font-awesome-icon icon="fa-screwdriver-wrench" />
     </template>
     <template #heading>Tooling</template>
 
     This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
-    recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
-    you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
-      >Cypress Component Testing</a
-    >.
-
+    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>.
+    <br />
+    Components are from the
+    <a href="https://vuetifyjs.com/en/" target="_blank" rel="noopener">Vuetify</a> Library , whereas
+    the Chart component is implemented using the
+    <a href="https://www.chartjs.org/>" target="_blank" rel="noopener">ChartJs</a> Library.
+    <br />
+    <a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a> icons were
+    used
     <br />
 
-    More instructions are available in <code>README.md</code>.
+    More informations are available in <code>README.md</code>.
   </WelcomeItem>
 
   <WelcomeItem>
     <template #icon>
-      <EcosystemIcon />
+      <font-awesome-icon icon="fa-circle-question" />
     </template>
-    <template #heading>Ecosystem</template>
+    <template #heading>About the project</template>
 
-    Get official tools and libraries for your project:
-    <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>,
-    <a href="https://router.vuejs.org/" target="_blank" rel="noopener">Vue Router</a>,
-    <a href="https://test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a>, and
-    <a href="https://github.com/vuejs/devtools" target="_blank" rel="noopener">Vue Dev Tools</a>. If
-    you need more resources, we suggest paying
-    <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">Awesome Vue</a>
-    a visit.
+    Built this project as a take home assignment for a frontend developer position. Was tasked to
+    present a timeseries stored in a json file on a responsive and filterable table and chart.<br />
+    Had no previous hands on experience with the <code>Vue Framework</code>, but really enjoyed the
+    challenge and process.
   </WelcomeItem>
 
   <WelcomeItem>
     <template #icon>
-      <CommunityIcon />
+      <font-awesome-icon icon="fa-user" />
     </template>
-    <template #heading>Community</template>
-
-    Got stuck? Ask your question on
-    <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Vue Land</a>, our official
-    Discord server, or
-    <a href="https://stackoverflow.com/questions/tagged/vue.js" target="_blank" rel="noopener"
-      >StackOverflow</a
-    >. You should also subscribe to
-    <a href="https://news.vuejs.org" target="_blank" rel="noopener">our mailing list</a> and follow
-    the official
-    <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">@vuejs</a>
-    twitter account for latest news in the Vue world.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <SupportIcon />
-    </template>
-    <template #heading>Support Vue</template>
-
-    As an independent project, Vue relies on community backing for its sustainability. You can help
-    us by
-    <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
+    <template #heading>About me</template>
+    Final year student at Computer Science Department of AUTh. <br />
+    Professional experience as a junior developer on the MEAN stack.<br />
+    <a href="https://github.com/thekonang" target="_blank" rel="noopener">Theocharis Angelidis</a>.
   </WelcomeItem>
 </template>
