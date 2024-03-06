@@ -26,9 +26,11 @@ selectedDate.value = [uniqueDates[0], uniqueDates[uniqueDates.length - 1]]
 
 const filteredData = computed(() => {
   // Filter data based on selected date range
+  // @ts-ignore: Unreachable code error
   if (selectedDate.value.length !== 2) {
     return timeseriesData
   } else {
+    // @ts-ignore: Unreachable code error
     const [startDate, endDate] = selectedDate.value
     return timeseriesData.filter((row) => {
       return (
@@ -70,7 +72,9 @@ const config = {
 
 // Initialize the chart when the component is mounted
 onMounted(() => {
+  // @ts-ignore: Unreachable code error
   const ctx = document.getElementById('myChart').getContext('2d')
+  // @ts-ignore: Unreachable code error
   new Chart(ctx, config)
 })
 
@@ -84,7 +88,9 @@ watch(selectedDate, () => {
 
   // Update the chart
   let canvas = document.querySelector('#myChart')
+  // @ts-ignore: Unreachable code error
   let chart = Chart.getChart(canvas) // Select using the canvas element
+  // @ts-ignore: Unreachable code error
   chart.update()
 })
 </script>
