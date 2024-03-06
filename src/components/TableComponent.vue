@@ -1,21 +1,31 @@
 <template>
   <div>
-    <h1>Table View of Timeseries Data</h1>
-    <div class="search-container">
-      <h4>Enter a date range:</h4>
+    <v-card theme="dark">
+      <v-card-title>Table View of Timeseries Data</v-card-title>
+      <v-card-subtitle>Select which columns to Display:</v-card-subtitle>
+      <div v-for="(header, index) in headers.slice(1)" :key="index">
+        <v-checkbox v-model="header.visible" :label="header.title"></v-checkbox>
+      </div>
+    </v-card>
+    <v-card theme="dark" class="search-container">
+      <v-card-text>Select a date range:</v-card-text>
       <VueDatePicker
         v-model="selectedDate"
         range
+        dark
         :enable-time-picker="false"
         :start-date="uniqueDates[0]"
         :max-date="uniqueDates[uniqueDates.length - 1]"
       ></VueDatePicker>
-
-      <!-- Added text field -->
-    </div>
+    </v-card>
     <v-text-field label="Search" v-model="search" />
-
-    <v-data-table :items="filteredData" density="compact" theme="dark"></v-data-table>
+    <!-- @vue-skip -->
+    <v-data-table
+      :items="filteredData"
+      :headers="displayedHeaders"
+      density="compact"
+      theme="dark"
+    ></v-data-table>
     <!-- Applied custom class for table -->
   </div>
 </template>
@@ -57,6 +67,7 @@ watch(selectedDate, () => {
 
 // Search functionality
 const search = ref('')
+
 const filteredData = computed(() => {
   return tableData.value.filter((row) => {
     return (
@@ -70,6 +81,25 @@ const filteredData = computed(() => {
       row.ENTSOE_FR_DAM_Price.includes(search.value)
     )
   })
+})
+
+// Define headers for the table
+const headers = ref([
+  {
+    title: 'Date & Time',
+    align: 'start',
+    sortable: true,
+    value: 'DateTime',
+    visible: true
+  },
+  { title: 'ENTSOE DE DAM Price', value: 'ENTSOE_DE_DAM_Price', sortable: true, visible: true },
+  { title: 'ENTSOE GR DAM Price', value: 'ENTSOE_GR_DAM_Price', sortable: true, visible: true },
+  { title: 'ENTSOE FR DAM Price', value: 'ENTSOE_FR_DAM_Price', sortable: true, visible: true }
+])
+
+// Compute displayed headers based on selected columns
+const displayedHeaders = computed(() => {
+  return headers.value.filter((header) => header.visible)
 })
 </script>
 

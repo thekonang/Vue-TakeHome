@@ -8,6 +8,7 @@
     <VueDatePicker
       v-model="selectedDate"
       range
+      dark
       :enable-time-picker="false"
       :start-date="uniqueDates[0]"
       :max-date="uniqueDates[uniqueDates.length - 1]"
